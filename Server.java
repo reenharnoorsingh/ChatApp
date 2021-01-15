@@ -17,7 +17,26 @@ public class Server extends JFrame {
         ImageIcon i3 = new ImageIcon(i2);// loading the scaled image
         JLabel l1 = new JLabel(i3);// adding it to label
         l1.setBounds(5, 17, 30, 30);
-        add(l1);// add to frame
+        p1.add(l1);// add to panel
+
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons\\1.png"));// loading arrow image
+        Image i5 = i4.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT);// scaling it
+        ImageIcon i6 = new ImageIcon(i5);// loading the scaled image
+        JLabel l2 = new JLabel(i6);// adding it to label
+        l2.setBounds(40, 5, 60, 60);
+        p1.add(l2);// add to panel
+
+        JLabel l3 = new JLabel("Gaitonde");//adding another label
+        l3.setFont(new Font("SAN_SERIF",Font.BOLD,18));
+        l3.setForeground(Color.WHITE);
+        l3.setBounds(110,15,100,18);
+        p1.add(l3);
+
+        JLabel l4 = new JLabel("Active Now");
+        l4.setFont(new Font("SAN_SERIF",Font.PLAIN,14));
+        l4.setForeground(Color.WHITE);
+        l4.setBounds(115,35,100,20);
+        p1.add(l4);
 
         setLayout(null);
         setSize(450, 700);// set the size of frame
