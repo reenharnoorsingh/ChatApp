@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Server extends JFrame {
+public class Server extends JFrame implements ActionListener{
     JPanel p1;// global variable
+    JTextField t1;
+    JButton b1;
 
     Server() {
 
@@ -18,6 +21,13 @@ public class Server extends JFrame {
         JLabel l1 = new JLabel(i3);// adding it to label
         l1.setBounds(5, 17, 30, 30);
         p1.add(l1);// add to panel
+
+        l1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(0);
+            }
+        });
 
         ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons\\1.png"));// loading profile image
         Image i5 = i4.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT);// scaling it
@@ -59,10 +69,20 @@ public class Server extends JFrame {
         l4.setBounds(115, 35, 100, 20);
         p1.add(l4);
 
+        t1 = new JTextField();
+        t1.setBounds(5,660,390,40);
+        t1.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
+        add(t1);
+
         setLayout(null);
-        setSize(450, 700);// set the size of frame
+        setSize(450, 750);// set the size of frame
         setLocation(400, 200);// position of frame on the screen
         setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 
     public static void main(String[] args) {
